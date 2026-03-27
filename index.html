@@ -18,241 +18,307 @@
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             scroll-behavior: smooth;
-            background: #f8fafc; /* Nền xám nhạt tinh tế hơn */
-            color: #1e293b;
+            background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
         }
 
         .energy-text {
-            background: linear-gradient(135deg, #059669 0%, #3b82f6 50%, #f59e0b 100%);
+            background: linear-gradient(to right, #10b981, #f59e0b, #3b82f6);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            line-height: 1.3 !important;
+            line-height: 1.4 !important;
         }
 
         .btn-energy {
             background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             color: white;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
         }
 
         .btn-energy:hover {
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 15px 30px rgba(16, 185, 129, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            border: 2px solid #10b981;
+            color: #059669;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background: #10b981;
+            color: white;
         }
 
         .glass-card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 1);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
-            transition: transform 0.3s ease;
-        }
-
-        .glass-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .step-number {
-            font-size: 8rem;
-            font-weight: 900;
-            line-height: 1;
-            background: linear-gradient(180deg, rgba(16, 185, 129, 0.15) 0%, rgba(255,255,255,0) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            position: absolute;
-            top: -40px;
-            left: -20px;
-            z-index: -1;
+            background: rgba(255, 255, 255, 0.65);
+            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
         }
 
         nav {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            background: rgba(255, 255, 255, 0.7);
+            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
         }
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .bg-pattern {
-            background-image: radial-gradient(#10b981 1px, transparent 1px);
-            background-size: 30px 30px;
-            opacity: 0.1;
+        .floating { animation: floating 6s ease-in-out infinite; }
+        
+        .cta-loading {
+            opacity: 0.7;
+            pointer-events: none;
+            cursor: not-allowed;
         }
     </style>
 </head>
 
-<body class="antialiased selection:bg-emerald-200 selection:text-emerald-900">
+<body class="text-slate-800 selection:bg-green-200 selection:text-green-900">
 
     <nav class="fixed w-full z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-            <div class="text-xl font-black tracking-widest uppercase energy-text">ENERGY MASTERY</div>
+            <div class="text-2xl font-black tracking-tight uppercase energy-text">ENERGY MASTERY</div>
             <a href="https://tally.so/r/2ELkQj" target="_blank"
-                class="btn-energy px-6 py-2.5 rounded-full font-bold text-sm tracking-wide shadow-lg">
-                THAM GIA NGAY
+                class="cta-survey btn-energy px-6 py-2.5 rounded-full font-bold text-sm tracking-wide shadow-lg">
+                ĐÁNH GIÁ NGAY
             </a>
         </div>
     </nav>
 
-    <section class="relative min-h-[90dvh] flex items-center pt-24 overflow-hidden">
-        <div class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-emerald-300 rounded-full mix-blend-multiply filter blur-[120px] opacity-40"></div>
-        <div class="absolute bottom-[-10%] left-[-5%] w-[600px] h-[600px] bg-blue-200 rounded-full mix-blend-multiply filter blur-[120px] opacity-50"></div>
-        <div class="absolute inset-0 bg-pattern"></div>
+    <section class="relative min-h-[100dvh] flex items-center pt-20 overflow-hidden">
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-green-200 rounded-full mix-blend-multiply filter blur-[150px] opacity-60"></div>
+        <div class="absolute top-0 left-0 w-[600px] h-[600px] bg-yellow-200 rounded-full mix-blend-multiply filter blur-[150px] opacity-60"></div>
 
-        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-10">
-            <div class="space-y-8">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100/50 text-emerald-700 text-sm font-bold tracking-widest uppercase border border-emerald-200">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    Self-Management for Professionals
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="text-left space-y-8">
+                <div class="inline-block px-4 py-1.5 rounded-full glass-card text-sm font-semibold text-green-600 uppercase tracking-wider">
+                    Dự án huấn luyện 2026
                 </div>
-                
-                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight tracking-tighter text-slate-800">
-                    Bật Công Tắc <br>
-                    <span class="energy-text">Tự Chủ Năng Lượng</span>
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight tracking-tighter">
+                    Tự Chủ Năng Lượng <br>
+                    <span class="energy-text">Cho Người Đi Làm</span>
                 </h1>
-                
-                <p class="text-xl font-light text-slate-600 leading-relaxed max-w-lg">
-                    Chỉ những "quốc gia thu nhỏ" biết quản trị nguồn lực của chính mình mới có thể đổi mới và bứt phá. Đã đến lúc nhìn nhận lại cách bạn đang vận hành mỗi ngày.
+                <p class="text-lg sm:text-xl font-light text-slate-600 leading-relaxed max-w-xl">
+                    Chỉ những "quốc gia thu nhỏ" biết tự chủ và sử dụng năng lượng đúng cách mới có thể đổi mới và bứt phá.
                 </p>
                 
-                <div class="pt-4 flex flex-col sm:flex-row gap-5">
-                    <a href="https://tally.so/r/2ELkQj" target="_blank" class="btn-energy px-8 py-4 rounded-full font-bold text-lg shadow-xl text-center">
-                        ĐÁNH GIÁ NĂNG LƯỢNG CỦA BẠN
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <a href="#about-us" class="btn-outline px-8 py-4 rounded-full font-bold text-center">
+                        TÌM HIỂU VẤN ĐỀ
+                    </a>
+                    <a href="https://tally.so/r/2ELkQj" target="_blank" class="cta-survey btn-energy px-8 py-4 rounded-full font-bold shadow-xl text-center">
+                        ĐÁNH GIÁ BẢN THÂN
                     </a>
                 </div>
             </div>
             
-            <div class="relative w-full flex justify-center lg:justify-end">
-                <div class="relative z-10 animate-float">
-                    <img src="images/1.jpg" alt="Energy Mastery" class="w-full max-w-[480px] rounded-[2.5rem] shadow-2xl border-8 border-white/80">
-                </div>
+            <div class="relative w-full flex justify-center lg:justify-end floating">
+                <img src="images/1.jpg" alt="Energy Mastery" class="w-full max-w-lg rounded-[2.5rem] shadow-2xl border-4 border-white">
             </div>
         </div>
     </section>
 
-    <section class="py-24 bg-white relative">
-        <div class="max-w-4xl mx-auto px-6 text-center space-y-10">
-            <h2 class="text-3xl md:text-5xl font-light text-slate-800 leading-snug">
-                Thế giới đang bước vào một <br>
-                <span class="font-bold energy-text">khủng hoảng năng lượng cá nhân.</span>
-            </h2>
-            <div class="w-24 h-1 bg-gradient-to-r from-emerald-400 to-blue-500 mx-auto rounded-full"></div>
-            
-            <p class="text-xl md:text-2xl text-slate-500 font-light leading-relaxed">
-                Chúng ta vẫn đi làm mỗi ngày, vẫn bận rộn nhưng <strong class="text-slate-800">không tiến lên.</strong> <br>
-                Lâu dần, niềm vui, hạnh phúc và hứng khởi biến mất, chỉ còn là <em>"làm cho xong"</em>.
-            </p>
-        </div>
-    </section>
-
-    <section class="py-32 relative overflow-hidden bg-slate-50">
+    <section id="about-us" class="py-24 bg-white/60 relative border-t border-white/50">
         <div class="max-w-7xl mx-auto px-6">
-            
-            <div class="text-center mb-24 space-y-4">
-                <h3 class="text-emerald-600 font-bold tracking-widest uppercase">Hành trình trải nghiệm</h3>
-                <h2 class="text-4xl md:text-5xl font-black text-slate-800">
-                    Bài test này sẽ <span class="energy-text">giải mã điều gì</span> cho bạn?
+            <div class="text-center mb-16 max-w-2xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-light text-slate-800 tracking-wide mb-6 leading-snug">
+                    Đôi lời chia sẻ từ <span class="font-bold energy-text">ENERGY MASTERY</span>
                 </h2>
+                <div class="w-16 h-[3px] bg-green-400 mx-auto rounded-full"></div>
             </div>
 
-            <div class="space-y-32">
-                <div class="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
-                    <div class="order-2 md:order-1 relative p-6">
-                        <div class="absolute inset-0 bg-emerald-200/30 rounded-[3rem] transform -rotate-3 scale-105 z-0"></div>
-                        <img src="images/2.jpg" alt="Nhận diện năng lượng" class="relative z-10 rounded-[2.5rem] shadow-xl w-full">
-                    </div>
-                    <div class="order-1 md:order-2 space-y-6 relative">
-                        <div class="step-number">01</div>
-                        <h3 class="text-3xl font-black text-slate-800">Đo Lường "Cột Pin" Nội Tại</h3>
-                        <p class="text-lg text-slate-600 font-light leading-relaxed">
-                            Bạn đang ở mức 100% đầy chủ động, hay đang cạn kiệt ở mức 10% và làm việc theo quán tính? Chúng ta không thể sửa chữa một thứ mà chúng ta không thể gọi tên. Bước đầu tiên là nhìn thẳng vào sự thật về mức năng lượng hiện tại của bạn.
-                        </p>
-                        <ul class="space-y-3 text-slate-700 font-medium">
-                            <li class="flex items-center gap-3"><span class="text-emerald-500 text-xl">✦</span> Xác định chính xác trạng thái cạn kiệt.</li>
-                            <li class="flex items-center gap-3"><span class="text-emerald-500 text-xl">✦</span> Nhìn nhận khoảng thời gian bạn bị mắc kẹt.</li>
-                        </ul>
-                    </div>
+            <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+                <div class="order-2 md:order-1 relative floating">
+                    <img src="images/5.jpg" alt="Phân tán năng lượng" class="rounded-3xl shadow-xl w-full object-cover border-4 border-white">
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
-                    <div class="space-y-6 relative">
-                        <div class="step-number text-right right-0 left-auto">02</div>
-                        <h3 class="text-3xl font-black text-slate-800">Truy Tìm "Lỗ Hổng" Rò Rỉ</h3>
-                        <p class="text-lg text-slate-600 font-light leading-relaxed">
-                            Bạn mệt mỏi có thể không phải vì bạn làm quá nhiều, mà vì bạn đang tiêu hao năng lượng sai chỗ. Đó có thể là những cuộc giao tiếp kém hiệu quả, sự thiếu tập trung, hay không rõ định hướng.
+                <div class="order-1 md:order-2 space-y-8">
+                    <div class="space-y-4">
+                        <h3 class="text-2xl font-bold text-slate-800 tracking-wide">
+                            Khủng hoảng năng lượng cá nhân
+                        </h3>
+                        <p class="text-slate-600 leading-relaxed font-light text-lg">
+                            Thế giới đang bước vào một giai đoạn khủng hoảng năng lượng. Mọi thứ trở nên khó đoán hơn bao giờ hết. Và mỗi người chúng ta cũng giống như một "quốc gia thu nhỏ". Chúng ta có năng lượng mỗi ngày để sống, làm việc, nhưng liệu ta có đang sử dụng nó đúng cách?
                         </p>
-                        <div class="glass-card p-6 rounded-2xl border-l-4 border-amber-400">
-                            <p class="text-slate-800 italic font-medium">
-                                "Cách bạn 'sạc pin' bằng giải trí hay nghỉ ngơi hiện tại liệu có thực sự hiệu quả, hay lại nhanh chóng đưa bạn về trạng thái mệt mỏi cũ?"
-                            </p>
-                        </div>
                     </div>
-                    <div class="relative p-6">
-                        <div class="absolute inset-0 bg-amber-200/30 rounded-[3rem] transform rotate-3 scale-105 z-0"></div>
-                        <img src="images/3.jpg" alt="Truy tìm lỗ hổng" class="relative z-10 rounded-[2.5rem] shadow-xl w-full">
-                    </div>
-                </div>
 
-                <div class="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
-                    <div class="order-2 md:order-1 relative p-6">
-                        <div class="absolute inset-0 bg-blue-200/30 rounded-[3rem] transform -rotate-3 scale-105 z-0"></div>
-                        <img src="images/4.jpg" alt="Kiến tạo bứt phá" class="relative z-10 rounded-[2.5rem] shadow-xl w-full">
-                    </div>
-                    <div class="order-1 md:order-2 space-y-6 relative">
-                        <div class="step-number">03</div>
-                        <h3 class="text-3xl font-black text-slate-800">Phác Họa Biểu Đồ Bứt Phá</h3>
-                        <p class="text-lg text-slate-600 font-light leading-relaxed">
-                            Nhìn lại bức tranh toàn cảnh về dao động năng lượng của bạn trong thời gian qua. Từ đó, tìm ra **một điều duy nhất** bạn cần thay đổi ngay bây giờ để phá vỡ những rào cản đang kìm chân bạn.
+                    <div class="space-y-4">
+                        <h3 class="text-2xl font-bold text-emerald-600 tracking-wide">
+                            Bận rộn nhưng không tiến lên
+                        </h3>
+                        <p class="text-slate-600 leading-relaxed font-light text-lg">
+                            Chúng ta vẫn đi làm mỗi ngày, vẫn cố gắng. Nhưng lâu dần, nhiều điều trở thành thói quen lặp lại. Niềm vui và hứng khởi biến mất, chỉ còn là cảm giác <em>"làm cho xong"</em>. ENERGY MASTERY ra đời để giúp bạn định hình lại cột năng lượng của chính mình.
                         </p>
-                        <a href="https://tally.so/r/2ELkQj" target="_blank" class="inline-flex items-center gap-2 text-emerald-600 font-bold hover:text-emerald-700 transition">
-                            Bắt đầu phân tích bản thân ngay <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </a>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <section class="py-32 relative text-center bg-white overflow-hidden">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-full bg-emerald-50 rounded-full blur-3xl opacity-70 z-0"></div>
-        
-        <div class="max-w-3xl mx-auto px-6 relative z-10 space-y-10">
-            <div class="w-24 h-24 mx-auto bg-white rounded-full shadow-2xl flex items-center justify-center mb-6">
-                <img src="images/5.jpg" alt="Icon" class="w-20 h-20 object-cover rounded-full">
+    <section class="py-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="space-y-6">
+                <h2 class="text-4xl font-black tracking-tight text-slate-800">
+                    Sự Rò Rỉ <br><span class="energy-text">Năng Lượng Thầm Lặng</span>
+                </h2>
+                <p class="text-lg text-slate-600 leading-relaxed font-light">
+                    Trong guồng quay công việc mỗi ngày, đã bao giờ bạn tự hỏi:
+                </p>
+                
+                <div class="space-y-4 pt-4">
+                    <div class="glass-card p-5 rounded-2xl border-l-4 border-l-emerald-500">
+                        <p class="text-slate-700 italic font-medium">"Mình đã kẹt ở mức năng lượng 30% này trong bao lâu rồi?"</p>
+                    </div>
+                    <div class="glass-card p-5 rounded-2xl border-l-4 border-l-amber-500">
+                        <p class="text-slate-700 italic font-medium">"Tại sao sau khi giải trí, nghỉ ngơi để 'sạc pin', mình vẫn nhanh chóng thấy mệt mỏi?"</p>
+                    </div>
+                    <div class="glass-card p-5 rounded-2xl border-l-4 border-l-blue-500">
+                        <p class="text-slate-700 italic font-medium">"Điều gì đang thực sự kìm giữ đà tiến lên của mình?"</p>
+                    </div>
+                </div>
             </div>
+
+            <div class="relative floating">
+                <img src="images/2.jpg" alt="Cột pin năng lượng" class="rounded-[2rem] shadow-2xl border-4 border-white w-full object-cover">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white/40 relative">
+        <div class="max-w-7xl mx-auto px-6 text-center mb-16">
+            <h2 class="text-4xl font-black tracking-tight mb-4">
+                Triết Lý <span class="energy-text">"Bịt Lỗ Hổng"</span>
+            </h2>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="relative floating order-2 md:order-1">
+                <img src="images/3.jpg" alt="Điều phối năng lượng" class="w-full rounded-[2rem] shadow-2xl border-4 border-white">
+            </div>
+
+            <div class="space-y-6 text-lg text-slate-600 leading-relaxed font-light order-1 md:order-2">
+                <p>
+                    Không phải ai bận rộn cũng đang làm việc hiệu quả. Sự khác biệt nằm ở khả năng nhận diện những nơi năng lượng đang bị phân tán: là giao tiếp, sự tập trung, hay quản lý thời gian.
+                </p>
+                <p>
+                    Giống như một chiếc thùng rỗng, nếu bạn không bịt những "lỗ hổng" gây rò rỉ, mọi nỗ lực bơm thêm năng lượng (như đi du lịch, lướt mạng, ngủ nướng) đều trở nên vô ích.
+                </p>
+                <div class="bg-emerald-50 p-6 rounded-2xl border-l-4 border-amber-400">
+                    <p class="font-medium text-slate-800">
+                        Tự chủ năng lượng bắt đầu từ việc đo lường. Nhìn nhận chính xác mình đang ở đâu là bước đầu tiên để kiến tạo nên đà bứt phá.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="glass-card rounded-[3rem] p-8 md:p-16 text-center relative overflow-hidden shadow-xl">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-blue-300 rounded-full mix-blend-multiply filter blur-[80px] opacity-40"></div>
+                
+                <h2 class="text-3xl md:text-5xl font-black mb-12 tracking-tight relative z-10">
+                    Hành Trình <br> <span class="energy-text">Kiến Tạo Bứt Phá</span>
+                </h2>
+                
+                <div class="grid md:grid-cols-3 gap-8 items-center relative z-10">
+                    <div class="text-center md:text-right space-y-4 order-2 md:order-1">
+                        <h3 class="text-2xl font-bold text-emerald-600">Nhận Diện Cột Pin</h3>
+                        <p class="text-slate-600 font-light">Xác định chính xác mức độ cạn kiệt và thời gian bạn bị mắc kẹt trong guồng quay quán tính.</p>
+                    </div>
+                    
+                    <div class="order-1 md:order-2">
+                        <img src="images/4.jpg" alt="Biểu đồ bứt phá" class="w-full rounded-2xl shadow-lg transform transition hover:scale-105 duration-500 border-4 border-white">
+                    </div>
+
+                    <div class="text-center md:text-left space-y-4 order-3 md:order-3">
+                        <h3 class="text-2xl font-bold text-amber-500">Phác Họa Tương Lai</h3>
+                        <p class="text-slate-600 font-light">Tìm ra một điều duy nhất cần thay đổi ngay bây giờ để lấy lại đà phát triển sự nghiệp.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 relative text-center">
+        <div class="max-w-4xl mx-auto px-6 relative z-10 space-y-8">
+            <img src="images/1.jpg" alt="Connection" class="w-32 h-32 object-cover rounded-full mx-auto shadow-xl mb-6 border-4 border-white floating">
             
-            <h2 class="text-4xl md:text-6xl font-black tracking-tighter text-slate-800">
+            <h2 class="text-4xl md:text-6xl font-black tracking-tighter">
                 Sẵn Sàng Mở Khóa <br>
                 <span class="energy-text">Đà Bứt Phá Của Bạn?</span>
             </h2>
-            <p class="text-xl text-slate-500 font-light leading-relaxed">
-                Bài test chỉ mất 3 phút để hoàn thành, nhưng có thể giúp bạn tiết kiệm hàng tháng trời loay hoay trong sự kiệt sức.
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto font-light">
+                Hãy dành 3 phút nhìn lại cách bạn sử dụng năng lượng mỗi ngày. Cùng ENERGY MASTERY nhận diện lỗ hổng và bắt đầu điều chỉnh để tạo ra sự thay đổi thực sự.
             </p>
             
             <div class="pt-6">
                 <a href="https://tally.so/r/2ELkQj" target="_blank"
-                    class="btn-energy px-12 py-5 rounded-full font-bold text-lg tracking-widest inline-block shadow-2xl hover:scale-105 transition-all">
+                    class="cta-survey btn-energy px-12 py-5 rounded-full font-bold text-lg tracking-wider inline-block shadow-2xl hover:scale-105">
                     LÀM BÀI ĐÁNH GIÁ NGAY
                 </a>
             </div>
         </div>
     </section>
 
-    <footer class="py-8 text-center bg-slate-50 border-t border-slate-200">
-        <p class="text-slate-400 text-xs font-bold tracking-widest uppercase">
+    <footer class="py-10 text-center bg-white border-t border-slate-200">
+        <p class="text-slate-400 text-sm font-semibold tracking-widest uppercase">
             © 2026 ENERGY MASTERY – TỰ CHỦ NĂNG LƯỢNG CHO NGƯỜI ĐI LÀM
         </p>
     </footer>
 
+    <script>
+        (async function () {
+            const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQPEXUKQbJBfP8CHZmrfMc4O5jNf8ziEfszK13ZLf87x1WnrIabDuaaorWqWNcAyGiCPRAdba1Zjz3G/pub?gid=2119825483&single=true&output=csv&range=A8:E100';
+
+            const params = new URLSearchParams(window.location.search);
+            const ref = params.get('ref');
+
+            const ctaButtons = document.querySelectorAll('.cta-survey');
+            ctaButtons.forEach(btn => btn.classList.add('cta-loading'));
+
+            function parseCsv(text) {
+                const lines = text.trim().split(/\r?\n/);
+                if (lines.length < 1) return [];
+                const headers = lines[0].split(',').map(h => h.trim());
+                return lines.slice(1).map(line => {
+                    const cols = line.split(',');
+                    const row = {};
+                    headers.forEach((h, i) => row[h] = (cols[i] || '').trim());
+                    return row;
+                });
+            }
+
+            try {
+                const res = await fetch(CSV_URL);
+                if (!res.ok) throw new Error('Không thể tải dữ liệu từ Google Sheets');
+                const text = await res.text();
+                const rows = parseCsv(text);
+
+                const target = rows.find(r => r.ref_code === ref) || rows.find(r => r.ref_code === 'default');
+
+                if (target && target.survey_url) {
+                    ctaButtons.forEach(btn => {
+                        btn.href = target.survey_url;
+                    });
+                    console.log('[EnergyMastery] Đã áp dụng mã mời:', ref || 'mặc định');
+                }
+            } catch (err) {
+                console.warn('[EnergyMastery] Lỗi xử lý link mời:', err.message);
+            } finally {
+                ctaButtons.forEach(btn => btn.classList.remove('cta-loading'));
+            }
+        })();
+    </script>
 </body>
 </html>
