@@ -18,7 +18,7 @@
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             scroll-behavior: smooth;
-            background: #f8fafc; /* Nền xám nhạt tinh tế hơn */
+            background: #f8fafc;
             color: #1e293b;
         }
 
@@ -88,6 +88,12 @@
             background-size: 30px 30px;
             opacity: 0.1;
         }
+
+        .cta-loading {
+            opacity: 0.7;
+            pointer-events: none;
+            cursor: not-allowed;
+        }
     </style>
 </head>
 
@@ -97,7 +103,7 @@
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
             <div class="text-xl font-black tracking-widest uppercase energy-text">ENERGY MASTERY</div>
             <a href="https://tally.so/r/2ELkQj" target="_blank"
-                class="btn-energy px-6 py-2.5 rounded-full font-bold text-sm tracking-wide shadow-lg">
+                class="cta-survey btn-energy px-6 py-2.5 rounded-full font-bold text-sm tracking-wide shadow-lg">
                 THAM GIA NGAY
             </a>
         </div>
@@ -125,7 +131,7 @@
                 </p>
                 
                 <div class="pt-4 flex flex-col sm:flex-row gap-5">
-                    <a href="https://tally.so/r/2ELkQj" target="_blank" class="btn-energy px-8 py-4 rounded-full font-bold text-lg shadow-xl text-center">
+                    <a href="https://tally.so/r/2ELkQj" target="_blank" class="cta-survey btn-energy px-8 py-4 rounded-full font-bold text-lg shadow-xl text-center">
                         ĐÁNH GIÁ NĂNG LƯỢNG CỦA BẠN
                     </a>
                 </div>
@@ -151,6 +157,46 @@
                 Chúng ta vẫn đi làm mỗi ngày, vẫn bận rộn nhưng <strong class="text-slate-800">không tiến lên.</strong> <br>
                 Lâu dần, niềm vui, hạnh phúc và hứng khởi biến mất, chỉ còn là <em>"làm cho xong"</em>.
             </p>
+        </div>
+    </section>
+
+    <section class="py-24 relative overflow-hidden bg-slate-800 text-white">
+        <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-emerald-500 rounded-full mix-blend-screen filter blur-[150px] opacity-30"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500 rounded-full mix-blend-screen filter blur-[150px] opacity-30"></div>
+
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-center relative z-10">
+            <div class="md:col-span-5 relative">
+                <div class="relative z-10 p-2 bg-white/10 rounded-[2rem] backdrop-blur-sm border border-white/20">
+                    <img src="images/5.jpg" alt="Sự thấu hiểu" class="w-full rounded-[1.5rem] shadow-2xl opacity-90 grayscale hover:grayscale-0 transition duration-700">
+                </div>
+            </div>
+
+            <div class="md:col-span-7 space-y-8 md:pl-8">
+                <div class="space-y-2">
+                    <h3 class="text-emerald-400 font-bold tracking-widest uppercase text-sm">Vì sao chúng tôi ở đây?</h3>
+                    <h2 class="text-3xl md:text-5xl font-black leading-tight">
+                        Quản lý thời gian đã lỗi thời. <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Năng lượng mới là chìa khóa.</span>
+                    </h2>
+                </div>
+                
+                <div class="space-y-5 text-slate-300 font-light text-lg leading-relaxed">
+                    <p>
+                        ENERGY MASTERY không bắt đầu như một dự án thương mại lý thuyết. Nó bắt đầu từ chính sự loay hoay của chúng tôi – những người đi làm công sở, những nhà quản lý từng rơi vào trạng thái <strong>burnout (kiệt sức)</strong>.
+                    </p>
+                    <p>
+                        Chúng tôi từng lầm tưởng rằng: <em>"Chỉ cần sắp xếp thời gian tốt hơn, mình sẽ làm được nhiều việc hơn"</em>. Nhưng sự thật là, khi bên trong bạn đã cạn kiệt, dù có 24 hay 48 tiếng, bạn vẫn chỉ ngồi nhìn màn hình trong sự trống rỗng.
+                    </p>
+                    <div class="p-6 rounded-2xl bg-white/5 border-l-4 border-emerald-400 backdrop-blur-md">
+                        <p class="italic text-slate-200">
+                            "Bạn không thiếu thời gian. Bạn không thiếu năng lực. Cái bạn đang thiếu là sự kết nối với chính nhịp điệu sinh học và tâm lý của bản thân."
+                        </p>
+                    </div>
+                    <p>
+                        Đó là lúc chúng tôi dừng lại, nghiên cứu sâu về Quản trị sức bền cá nhân, và tạo ra hệ thống đo lường này. Chúng tôi xây dựng công cụ này trước hết là để tự cứu lấy mình. Và giờ đây, chúng tôi đóng gói nó lại để giúp bạn rút ngắn những tháng ngày loay hoay vô hình.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -213,7 +259,7 @@
                         <p class="text-lg text-slate-600 font-light leading-relaxed">
                             Nhìn lại bức tranh toàn cảnh về dao động năng lượng của bạn trong thời gian qua. Từ đó, tìm ra <strong>một điều duy nhất</strong> bạn cần thay đổi ngay bây giờ để phá vỡ những rào cản đang kìm chân bạn.
                         </p>
-                        <a href="https://tally.so/r/2ELkQj" target="_blank" class="inline-flex items-center gap-2 text-emerald-600 font-bold hover:text-emerald-700 transition">
+                        <a href="https://tally.so/r/2ELkQj" target="_blank" class="cta-survey inline-flex items-center gap-2 text-emerald-600 font-bold hover:text-emerald-700 transition">
                             Bắt đầu phân tích bản thân ngay <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </a>
                     </div>
@@ -228,7 +274,7 @@
         
         <div class="max-w-3xl mx-auto px-6 relative z-10 space-y-10">
             <div class="w-24 h-24 mx-auto bg-white rounded-full shadow-2xl flex items-center justify-center mb-6">
-                <img src="images/5.jpg" alt="Icon" class="w-20 h-20 object-cover rounded-full">
+                <img src="images/1.jpg" alt="Icon" class="w-20 h-20 object-cover rounded-full">
             </div>
             
             <h2 class="text-4xl md:text-6xl font-black tracking-tighter text-slate-800">
@@ -241,7 +287,7 @@
             
             <div class="pt-6">
                 <a href="https://tally.so/r/2ELkQj" target="_blank"
-                    class="btn-energy px-12 py-5 rounded-full font-bold text-lg tracking-widest inline-block shadow-2xl hover:scale-105 transition-all">
+                    class="cta-survey btn-energy px-12 py-5 rounded-full font-bold text-lg tracking-widest inline-block shadow-2xl hover:scale-105 transition-all">
                     LÀM BÀI ĐÁNH GIÁ NGAY
                 </a>
             </div>
@@ -254,5 +300,48 @@
         </p>
     </footer>
 
+    <script>
+        (async function () {
+            const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQPEXUKQbJBfP8CHZmrfMc4O5jNf8ziEfszK13ZLf87x1WnrIabDuaaorWqWNcAyGiCPRAdba1Zjz3G/pub?gid=2119825483&single=true&output=csv&range=A8:E100';
+
+            const params = new URLSearchParams(window.location.search);
+            const ref = params.get('ref');
+
+            const ctaButtons = document.querySelectorAll('.cta-survey');
+            ctaButtons.forEach(btn => btn.classList.add('cta-loading'));
+
+            function parseCsv(text) {
+                const lines = text.trim().split(/\r?\n/);
+                if (lines.length < 1) return [];
+                const headers = lines[0].split(',').map(h => h.trim());
+                return lines.slice(1).map(line => {
+                    const cols = line.split(',');
+                    const row = {};
+                    headers.forEach((h, i) => row[h] = (cols[i] || '').trim());
+                    return row;
+                });
+            }
+
+            try {
+                const res = await fetch(CSV_URL);
+                if (!res.ok) throw new Error('Không thể tải dữ liệu từ Google Sheets');
+                const text = await res.text();
+                const rows = parseCsv(text);
+
+                const target = rows.find(r => r.ref_code === ref) || rows.find(r => r.ref_code === 'default');
+
+                if (target && target.survey_url) {
+                    ctaButtons.forEach(btn => {
+                        btn.href = target.survey_url;
+                    });
+                    console.log('[EnergyMastery] Đã áp dụng mã mời:', ref || 'mặc định');
+                }
+            } catch (err) {
+                console.warn('[EnergyMastery] Lỗi xử lý link mời:', err.message);
+            } finally {
+                ctaButtons.forEach(btn => btn.classList.remove('cta-loading'));
+            }
+        })();
+    </script>
 </body>
 </html>
